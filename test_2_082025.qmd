@@ -1,0 +1,505 @@
+---
+title: "Data Visulatization Approaches in Scientific & Clinical Research"
+author: "<br><br><span style='font-size:25px;'><strong>Lesley Chapman Hannah, Ph.D., M.S.</strong></span><br>College of Graduate Studies<br>Northeast Ohio Medical University"
+
+
+format: 
+  revealjs:
+    #theme: solarized
+    css: style.css
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/Flame.jpg
+    #css: styles.css
+    
+---
+
+## Lecture Overview
+
+::: incremental
+- Discussion common plot types used in scientific and medical literature
+- Concepts to consider when generating plots to evaluate data
+- Discuss select plot examples from a research article
+
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Survey: Data Visualization in the Literature</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Survey of clinical literature: 175 figures across 77 papers in the following medical journals**:
+
+- British Medical Journal
+- Journal of American Medical Association
+- New England Journal of Medicine
+:::
+
+::: {.column width="50%"}
+```{python}
+
+#%pip install tabulate
+
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["Flow Diagram",66],
+         ["Kaplan Meier plot",32],
+         ["Forest plot",21],
+         ["Bar chart",7],
+         ["Individual patient data",3],
+         ["Box plot",2],
+         ["Cumulative distribution",13]]
+Markdown(tabulate(
+  table, 
+  headers=["Figure Type", "Count (n)"]
+))
+```
+
+:::
+<span style="font-size:60%">Pocock, Travison, & Wruck (2007), “Figures in clinical trial reports: current practice & scope for improvement” (Trials)</span>
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Survey: Data Visualization in the Literature</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Survey of biomedical literature: 227,998 PubMed Central articles across 23 fields**:
+
+
+:::
+
+::: {.column width="50%"}
+```{python}
+
+#%pip install tabulate
+
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["Bar graph",1078],
+         ["Bar graph with dot plot", 149],
+         ["Dot plot", 393],
+         ["Box plot", 368],
+         ["Violin plot", 340],
+         ["Histogram", 238],
+         ["Flow chart", 276],
+         ["Pie chart", 160]]
+Markdown(tabulate(
+  table, 
+  headers=["Figure Type", "Count (n)"]
+))
+```
+
+:::
+<span style="font-size:60%">Riedel, N. Clinical Scienence (Lond). 2022.</span>
+:::
+::: footer
+:::
+
+
+
+
+
+
+
+
+## <span style="font-size:80%"> </span> {.smaller}
+
+
+::: columns
+::: {.column width="80%"}
+**Discussion:** 
+
+Concepts to consider when evaluating data visualization in published literature or for self-generated reports
+:::
+
+::: {.column width="20%"}
+
+:::
+
+:::
+::: footer
+:::
+
+
+
+
+
+## <span style="font-size:80%">Scenario</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+**Problem**: A medical group in rural Maine has a breast cancer patient cohort of 5000 patients. They have a limited budget and want to know you could develop a an approach to predict each patient’s to neoadjuvant therapy.
+:::
+
+::: {.column width="50%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Scenario</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+**Problem**: A medical group in rural Maine has a breast cancer patient cohort of 5000 patients. They have a limited budget and want to know you could develop a an approach to predict each patient’s to neoadjuvant therapy. 
+
+**Data**: The group has collected collected extensive data for each patient including - omics data (RNA and DNA), digital pathology, and clinical data
+
+
+:::
+
+::: {.column width="50%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Scenario</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+**Problem**: A medical group in rural Maine has a breast cancer patient cohort of 5000 patients. They have a limited budget and want to know you could develop a an approach to predict each patient’s to neoadjuvant therapy
+
+**Data**: The group has collected collected extensive data for each patient including - omics data (RNA and DNA), digital pathology, and clinical data
+
+**Strategy**: Develop a machine learning model to predict patient response to neoadjuvant therapy. Use data visualizations to understand biomarkers in patient cohort and evaluate model performance
+:::
+
+::: {.column width="50%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Scenario</span> {.smaller}
+
+
+::: columns
+::: {.column width="30%"}
+**Approach**: 
+
+Find an example from the literature that implements a similar approach
+:::
+
+::: {.column width="70%"}
+![](images/nature_paper_bc.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Scenario</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+**Approach**: Find an example from the literature that implements a similar approach
+
+**Summary**:
+
+Sammut et al., Nature (2022) evaluated whether pretreatment tumor “ecosystem” features from 180 breast cancer patients (i.e.: RNA and DNA) can be integrated within a machine learning model to predict response to neoadjuvant therapy [pathological complete response (pCR) vs. having residual disease post surgery]?
+
+:::
+
+::: {.column width="50%"}
+![](images/nature_paper_bc.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
+
+## <span style="font-size:80%">Consider</span> {.smaller}
+
+
+::: columns
+::: {.column width="30%"}
+Given/Find Data?
+
+:::
+
+::: {.column width="70%"}
+![](images/nature_paper_bc.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Consider</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+Given/Find data $\rightarrow$ Visualize Data for Task
+
+:::
+
+::: {.column width="50%"}
+![](images/nature_paper_bc.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Consider</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+Given/Find data $\rightarrow$ Visualize Data for Task
+
+::: incremental
+- **Estimand first**: effect, difference, structure, time, prediction, mechanism, or synthesis?
+- **Unit & scale**: continuous vs counts; events vs time
+- **Uncertainty visible**: intervals, at-risk, calibration, heterogeneity
+- **Assumptions inspectable**: confounding control, batch
+- **Tailor your figure to audience norms:** journal article, clinical collaborator
+:::
+
+:::
+
+::: {.column width="50%"}
+
+
+
+:::
+
+:::
+::: footer
+:::
+
+
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+
+::: columns
+::: {.column width="50%"}
+Understand features within the dataset to improve model performance
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Understand features within the dataset to improve model performance**
+
+Correlation heatmap of all candidate features, to reveal redundancy/blocks of co-varying signals
+
+::: incremental
+- **Estimate**: correlations between features
+- **Unit/Scale**: continuous [T Cell exclusion score], counts[TP53 mutation status]
+- **Inspectable assumption**: correct for correlated features which may impact downstream model performance
+:::
+:::
+
+::: {.column width="50%"}
+![](images/nature_heatmap.png){.border .border-thick}
+:::
+<span style="font-size:60%">Sammut, S., et. al. (2021). Nature.</span>
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Determine model performance with select features**
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Determine model performance with select features**
+
+Three classification pipelines (elastic-net logistic regression, SVM, random forest) trained to predict response to neoadjuvant therapy
+
+::: incremental
+- **Estimate**: correlations between 3 trained models versus average model performance
+- **Unit/Scale**: continuous
+- **Inspectable assumption**: identify models with conflicting performance
+:::
+:::
+
+::: {.column width="50%"}
+![](images/nature_model_performance.png){.border .border-thick}
+:::
+<span style="font-size:60%">Sammut, S., et. al. (2021). Nature.</span>
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Key Biological finding**: tumors with higher mutational burden have better response to therapy
+
+:::
+
+::: {.column width="50%"}
+
+:::
+<span style="font-size:60%">Sammut, S., et. al. (2021). Nature.</span>
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Example: Sammut et al., Nature (2022)</span> {.smaller}
+
+::: columns
+::: {.column width="50%"}
+***Key Biological finding: tumors with higher mutational burden have better response to therapy**
+
+Single-feature association with outcome: 
+
+a box plot of tumor mutation burden (TMB) across Residual Cancer Burden (RCB) classes [I- good; II-moderate; II-poor response to therapy]
+
+
+::: incremental
+- **Estimate**: effect of tumor mutation status on response to therapy
+- **Unit/Scale**: continuous and count
+- **Inspectable assumption**: Error bars reflecting certainty of each prediction
+:::
+:::
+
+::: {.column width="50%"}
+![](images/nature_box_plot.png){.border .border-thick}
+:::
+<span style="font-size:30%">pCR: pathological complete response </span> <br>
+<span style="font-size:30%">RCB: residual cancer burden </span> <br>
+<span style="font-size:60%">Sammut, S., et. al. (2021). Nature.</span>
+:::
+::: footer
+:::
+
+## <span style="font-size:80%">Key Takeaways</span> {.smaller}
+
+::: columns
+::: {.column width="70%"}
+
+
+::: incremental
+- Data visualization to guide feature selection for downstream model training
+- Data visualization to compare model performance
+- Data visualization to visualize biological change within data
+:::
+
+
+
+:::
+
+::: {.column width="30%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
+
+## <span style="font-size:80%">Review</span> {.smaller}
+
+::: columns
+::: {.column width="70%"}
+
+
+::: incremental
+- **Estimating?** $\rightarrow$ create figures with points + intervals
+- **Comparing?** groups $\rightarrow$ show the distribution
+- **Predicting?** $\rightarrow$ correlations to compare model performance and upstream feature selection
+:::
+
+
+
+:::
+
+::: {.column width="30%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
+## <span style="font-size:80%">Review</span> {.smaller}
+
+::: columns
+::: {.column width="70%"}
+
+
+
+- **Estimating?** $\rightarrow$ create figures with points + intervals
+- **Comparing?** groups $\rightarrow$ show the distribution
+- **Predicting?** $\rightarrow$ pair findings with ROC/PR
+
+
+Future
+
+::: incremental
+- Arguing mechanism to support outcome $\rightarrow$ use pathway/network plots with clear edge meaning 
+- Time or events $\rightarrow$ Kaplan Meier Curves with confidence intervals
+
+:::
+
+
+:::
+
+::: {.column width="30%"}
+![](images/male_scientist.png){.border .border-thick}
+:::
+
+:::
+::: footer
+:::
+
+
