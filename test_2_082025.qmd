@@ -61,7 +61,7 @@ Markdown(tabulate(
 ```
 
 :::
-<span style="font-size:60%">Pocock, Travison, & Wruck (2007), “Figures in clinical trial reports: current practice & scope for improvement” (Trials)</span>
+<span style="font-size:60%">Pocock, Travison, & Wruck(2007), “Figures in clinical trial reports: current practice & scope for improvement” (Trials)</span>
 :::
 ::: footer
 :::
